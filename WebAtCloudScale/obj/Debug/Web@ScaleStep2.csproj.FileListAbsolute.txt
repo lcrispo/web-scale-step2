@@ -238,3 +238,4 @@ C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\zh-Hant\Syste
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\obj\Debug\Web@ScaleStep2.csprojResolveAssemblyReference.cache
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\obj\Debug\ImageGalleryInMvc5.dll
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\obj\Debug\ImageGalleryInMvc5.pdb
+C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\NewRelic.Api.Agent.dll
