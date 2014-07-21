@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="dbContext-Web.config Connection String" description="dbContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=localhost;Initial Catalog=CommonDataBase; Integrated Security=true" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\lucrispo\\Desktop\\web@globalscale\\ImageGalleryInMvc5\\webAtscalestep2\\WebAtCloudScale\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbContext']/@connectionString" />
+  </parameter>
+</parameters>
