@@ -18,12 +18,14 @@
                 </button>
                 @Html.ActionLink("WebatScalestep2", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
+            
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Messages", "Messages", "Home")</li>
                 </ul>
             </div>
+            <p style="color:white">serving content from @HttpContext.Current.Request.Url.Host</p>
         </div>
     </div>
     <div class="container body-content">
