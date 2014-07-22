@@ -182,9 +182,16 @@ C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\System.Web.We
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\System.Web.WebPages.dll
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\System.Web.WebPages.Razor.dll
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\WebGrease.dll
+C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\obj\Debug\ImageGalleryInMvc5.dll
+C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\obj\Debug\ImageGalleryInMvc5.pdb
+C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\NewRelic.Api.Agent.dll
+C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\Microsoft.Azure.Jobs.dll
+C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\Microsoft.Azure.Jobs.Host.dll
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\Antlr3.Runtime.pdb
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\EntityFramework.xml
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\EntityFramework.SqlServer.xml
+C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\Microsoft.Azure.Jobs.xml
+C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\Microsoft.Azure.Jobs.Host.xml
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\Microsoft.Data.Edm.xml
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\Microsoft.Data.OData.xml
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\Microsoft.Data.Services.Client.xml
@@ -236,6 +243,3 @@ C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\ru\System.Spa
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\obj\Debug\Web@ScaleStep2.csprojResolveAssemblyReference.cache
-C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\obj\Debug\ImageGalleryInMvc5.dll
-C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\obj\Debug\ImageGalleryInMvc5.pdb
-C:\Users\lucrispo\Source\Repos\web-scale-step2\WebAtCloudScale\bin\NewRelic.Api.Agent.dll

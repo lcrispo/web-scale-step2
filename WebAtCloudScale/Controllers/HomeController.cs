@@ -10,6 +10,7 @@ using Microsoft.WindowsAzure.Storage;
 using System.Web.Configuration;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.WindowsAzure.Storage.Queue;
 
 
 namespace WebAtScale.Controllers
@@ -17,22 +18,15 @@ namespace WebAtScale.Controllers
 
     public class MessageEntity : TableEntity
     {
-        public MessageEntity(string guid1, string guid2)
-        {
-            this.PartitionKey = guid1;
-            this.RowKey = guid2;
-        }
-
-        public MessageEntity() { }
-
-        public string Message { get; set; }
+        public string message { get; set; }
     }
     public class HomeController : Controller
     {
         private readonly DbConnectionContext db = new DbConnectionContext();
-        CloudStorageAccount account = new CloudStorageAccount(new StorageCredentials(WebConfigurationManager.AppSettings["StorageAccountName"], WebConfigurationManager.AppSettings["StorageAccount"]), false);
-        CloudStorageAccount account2 = new CloudStorageAccount(new StorageCredentials(WebConfigurationManager.AppSettings["StorageAccountName2"], WebConfigurationManager.AppSettings["StorageAccount2"]), false);
-        
+        CloudStorageAccount account = new CloudStorageAccount(new StorageCredentials(WebConfigurationManager.AppSettings["StorageAccountName"], WebConfigurationManager.AppSettings["StorageAccount"]), true);
+        CloudStorageAccount account2 = new CloudStorageAccount(new StorageCredentials(WebConfigurationManager.AppSettings["StorageAccountName2"], WebConfigurationManager.AppSettings["StorageAccount2"]), true);
+        CloudStorageAccount account3 = new CloudStorageAccount(new StorageCredentials(WebConfigurationManager.AppSettings["StorageAccountName3"], WebConfigurationManager.AppSettings["StorageAccount3"]), true);
+
 
 
 
@@ -84,12 +78,12 @@ namespace WebAtScale.Controllers
 
             List<MessageEntity> allEntities = new List<MessageEntity>();
             var MessagesModel = new MessageList();
-            TableQuery<MessageEntity> query = new TableQuery<MessageEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "GeneralMessages"));
+            TableQuery<MessageEntity> query = new TableQuery<MessageEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "default"));
 
             // Print the fields for each customer.
             foreach (MessageEntity entity in table.ExecuteQuery(query))
             {
-                MessagesModel.Messages.Add(entity.Message);
+                MessagesModel.Messages.Add(entity.message);
             }
 
             return View(MessagesModel);
@@ -146,20 +140,30 @@ namespace WebAtScale.Controllers
            [HttpPost]
         public ActionResult SubmitMessageMethod()
         {
+            var queueclient = account2.CreateCloudQueueClient();
+            var queue = queueclient.GetQueueReference("incomingmessages");
+            queue.CreateIfNotExists();
+            queue.AddMessage(new CloudQueueMessage(Request.Form["Message"]));
 
-            CloudTableClient tableClient = account2.CreateCloudTableClient();
+            var queueclient2 = account3.CreateCloudQueueClient();
+            var queue2 = queueclient2.GetQueueReference("incomingmessages");
+            queue2.CreateIfNotExists();
+            queue2.AddMessage(new CloudQueueMessage(Request.Form["Message"]));
+            
 
-            // Create the table if it doesn't exist.
-            CloudTable table = tableClient.GetTableReference("MessageBoard");
+            //CloudTableClient tableClient = account2.CreateCloudTableClient();
+                
+            //// Create the table if it doesn't exist.
+            //CloudTable table = tableClient.GetTableReference("MessageBoard");
 
-            MessageEntity message = new MessageEntity("GeneralMessages", WebConfigurationManager.AppSettings["MessageSource"]);
-            message.Message = Request.Form["Message"];  
+            //MessageEntity message = new MessageEntity("GeneralMessages", WebConfigurationManager.AppSettings["MessageSource"]);
+            //message.Message = Request.Form["Message"];  
 
-            // Create the TableOperation that inserts the customer entity.
-            TableOperation insertOperation = TableOperation.Insert(message);
+            //// Create the TableOperation that inserts the customer entity.
+            //TableOperation insertOperation = TableOperation.Insert(message);
 
-            // Execute the insert operation.
-            table.Execute(insertOperation);
+            //// Execute the insert operation.
+            //table.Execute(insertOperation);
             return Content("Success");
         }
       }

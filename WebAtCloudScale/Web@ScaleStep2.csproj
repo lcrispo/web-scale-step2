@@ -51,6 +51,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Azure.Jobs">
+      <HintPath>..\packages\Microsoft.Azure.Jobs.Core.0.3.0-beta\lib\net45\Microsoft.Azure.Jobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Jobs.Host">
+      <HintPath>..\packages\Microsoft.Azure.Jobs.0.3.0-beta\lib\net45\Microsoft.Azure.Jobs.Host.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -198,9 +204,12 @@
     <None Include="newrelic\newrelic.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\PublishProfiles\webscalestep2.pubxml" />
+    <Content Include="Properties\ligershark.webjobs.targets" />
+    <Content Include="Properties\ligershark.webjobs.ext.targets" />
+    <None Include="Properties\PublishProfiles\webjobtest2.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="newrelic\NewRelic.Profiler.dll" />
+    <Content Include="Properties\WebJobs.xml" />
     <Content Include="Scripts\blank.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -290,7 +299,6 @@
     <Content Include="Views\Home\Messages.cshtml" />
     <Content Include="Views\Home\SubmitMessage.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
